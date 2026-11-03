@@ -1,0 +1,19 @@
+{
+  "bestK": 1,
+  "accuracy": 1,
+  "featureNames": [
+    "age",
+    "gender",
+    "pain_severity",
+    "pain_time",
+    "tooth_location",
+    "is_pregnant",
+    "previous_treatment",
+    "medicines",
+    "chronic_diseases",
+    "notes",
+    "case_type"
+  ],
+  "trainedAt": "2026-07-29T07:59:13.296Z",
+  "totalSamples": 36
+}

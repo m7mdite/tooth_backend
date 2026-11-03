@@ -1,0 +1,364 @@
+{
+  "classMap": {
+    "6a245cdce5e4159c8d00cb45": 0,
+    "dummy_treatment_123": 1
+  },
+  "numClasses": 2,
+  "features": [
+    "age",
+    "gender",
+    "pain_severity",
+    "pain_time",
+    "tooth_location",
+    "is_pregnant",
+    "previous_treatment",
+    "medicines",
+    "chronic_diseases",
+    "notes"
+  ],
+  "imageMode": true,
+  "trainedAt": "2026-07-30T11:52:52.911Z",
+  "model": {
+    "layers": [
+      {
+        "0": {},
+        "1": {},
+        "2": {},
+        "3": {},
+        "4": {},
+        "5": {},
+        "6": {},
+        "7": {},
+        "8": {}
+      },
+      {
+        "0": {
+          "bias": null,
+          "weights": {
+            "0": null,
+            "1": null,
+            "2": null,
+            "3": null,
+            "4": null,
+            "5": null,
+            "6": null,
+            "7": null,
+            "8": null
+          }
+        },
+        "1": {
+          "bias": null,
+          "weights": {
+            "0": null,
+            "1": null,
+            "2": null,
+            "3": null,
+            "4": null,
+            "5": null,
+            "6": null,
+            "7": null,
+            "8": null
+          }
+        },
+        "2": {
+          "bias": null,
+          "weights": {
+            "0": null,
+            "1": null,
+            "2": null,
+            "3": null,
+            "4": null,
+            "5": null,
+            "6": null,
+            "7": null,
+            "8": null
+          }
+        },
+        "3": {
+          "bias": null,
+          "weights": {
+            "0": null,
+            "1": null,
+            "2": null,
+            "3": null,
+            "4": null,
+            "5": null,
+            "6": null,
+            "7": null,
+            "8": null
+          }
+        },
+        "4": {
+          "bias": null,
+          "weights": {
+            "0": null,
+            "1": null,
+            "2": null,
+            "3": null,
+            "4": null,
+            "5": null,
+            "6": null,
+            "7": null,
+            "8": null
+          }
+        },
+        "5": {
+          "bias": null,
+          "weights": {
+            "0": null,
+            "1": null,
+            "2": null,
+            "3": null,
+            "4": null,
+            "5": null,
+            "6": null,
+            "7": null,
+            "8": null
+          }
+        },
+        "6": {
+          "bias": null,
+          "weights": {
+            "0": null,
+            "1": null,
+            "2": null,
+            "3": null,
+            "4": null,
+            "5": null,
+            "6": null,
+            "7": null,
+            "8": null
+          }
+        },
+        "7": {
+          "bias": null,
+          "weights": {
+            "0": null,
+            "1": null,
+            "2": null,
+            "3": null,
+            "4": null,
+            "5": null,
+            "6": null,
+            "7": null,
+            "8": null
+          }
+        },
+        "8": {
+          "bias": null,
+          "weights": {
+            "0": null,
+            "1": null,
+            "2": null,
+            "3": null,
+            "4": null,
+            "5": null,
+            "6": null,
+            "7": null,
+            "8": null
+          }
+        },
+        "9": {
+          "bias": null,
+          "weights": {
+            "0": null,
+            "1": null,
+            "2": null,
+            "3": null,
+            "4": null,
+            "5": null,
+            "6": null,
+            "7": null,
+            "8": null
+          }
+        },
+        "10": {
+          "bias": null,
+          "weights": {
+            "0": null,
+            "1": null,
+            "2": null,
+            "3": null,
+            "4": null,
+            "5": null,
+            "6": null,
+            "7": null,
+            "8": null
+          }
+        },
+        "11": {
+          "bias": null,
+          "weights": {
+            "0": null,
+            "1": null,
+            "2": null,
+            "3": null,
+            "4": null,
+            "5": null,
+            "6": null,
+            "7": null,
+            "8": null
+          }
+        },
+        "12": {
+          "bias": null,
+          "weights": {
+            "0": null,
+            "1": null,
+            "2": null,
+            "3": null,
+            "4": null,
+            "5": null,
+            "6": null,
+            "7": null,
+            "8": null
+          }
+        }
+      },
+      {
+        "0": {
+          "bias": null,
+          "weights": {
+            "0": null,
+            "1": null,
+            "2": null,
+            "3": null,
+            "4": null,
+            "5": null,
+            "6": null,
+            "7": null,
+            "8": null,
+            "9": null,
+            "10": null,
+            "11": null,
+            "12": null
+          }
+        },
+        "1": {
+          "bias": null,
+          "weights": {
+            "0": null,
+            "1": null,
+            "2": null,
+            "3": null,
+            "4": null,
+            "5": null,
+            "6": null,
+            "7": null,
+            "8": null,
+            "9": null,
+            "10": null,
+            "11": null,
+            "12": null
+          }
+        },
+        "2": {
+          "bias": null,
+          "weights": {
+            "0": null,
+            "1": null,
+            "2": null,
+            "3": null,
+            "4": null,
+            "5": null,
+            "6": null,
+            "7": null,
+            "8": null,
+            "9": null,
+            "10": null,
+            "11": null,
+            "12": null
+          }
+        },
+        "3": {
+          "bias": null,
+          "weights": {
+            "0": null,
+            "1": null,
+            "2": null,
+            "3": null,
+            "4": null,
+            "5": null,
+            "6": null,
+            "7": null,
+            "8": null,
+            "9": null,
+            "10": null,
+            "11": null,
+            "12": null
+          }
+        },
+        "4": {
+          "bias": null,
+          "weights": {
+            "0": null,
+            "1": null,
+            "2": null,
+            "3": null,
+            "4": null,
+            "5": null,
+            "6": null,
+            "7": null,
+            "8": null,
+            "9": null,
+            "10": null,
+            "11": null,
+            "12": null
+          }
+        },
+        "5": {
+          "bias": null,
+          "weights": {
+            "0": null,
+            "1": null,
+            "2": null,
+            "3": null,
+            "4": null,
+            "5": null,
+            "6": null,
+            "7": null,
+            "8": null,
+            "9": null,
+            "10": null,
+            "11": null,
+            "12": null
+          }
+        },
+        "6": {
+          "bias": null,
+          "weights": {
+            "0": null,
+            "1": null,
+            "2": null,
+            "3": null,
+            "4": null,
+            "5": null,
+            "6": null,
+            "7": null,
+            "8": null,
+            "9": null,
+            "10": null,
+            "11": null,
+            "12": null
+          }
+        }
+      },
+      {
+        "0": {
+          "bias": null,
+          "weights": {
+            "0": null,
+            "1": null,
+            "2": null,
+            "3": null,
+            "4": null,
+            "5": null,
+            "6": null
+          }
+        }
+      }
+    ],
+    "outputLookup": false,
+    "inputLookup": false
+  }
+}

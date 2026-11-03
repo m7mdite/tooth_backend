@@ -1,0 +1,38 @@
+const mongoose=require('mongoose');
+const profileSchema=mongoose.Schema({
+    user: { type: mongoose.Schema.Types.ObjectId, ref: 'User',},
+    first_name: {
+        type: String,
+        required: true,
+        trim: true
+      },
+      father_name:{
+        type: String,
+        required: true,
+        trim: true
+      },
+    last_name: {
+        type: String,
+        required: true,
+        trim: true
+      },
+      bio: {
+        type: String,
+        default: ''
+      },
+      profile_photo: {
+        type: Object,
+        default: {
+          publicId: null,
+          url: null
+        }
+      },
+      gender:{
+        type:String
+      },
+      phone_number:{
+        type:String
+      }
+})
+const Patient_profile=mongoose.model('Patient_profile',profileSchema)
+module.exports=Patient_profile

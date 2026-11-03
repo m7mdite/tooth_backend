@@ -1,0 +1,407 @@
+// ====================================
+// 🔐 AUTHENTICATION & USER PROFILE (1-5)
+// ====================================
+
+// 1: register
+{
+    link: "http://localhost:5000/api/auth/register",
+    method: "post",
+    parameters: ["email", "password", "first_name", "last_name", "role", "university_number"]
+}
+
+// 2: login
+{
+    link: "http://localhost:5000/api/auth/login",
+    method: "post",
+    parameters: ["email", "password"]
+}
+
+// 3: update user profile
+{
+    link: "http://localhost:5000/api/users",
+    method: "put",
+    parameters: ["email", "password", "first_name", "last_name", "role", "university_number"]
+}
+
+// 4: update profile photo
+{
+    link: "http://localhost:5000/api/users/photo",
+    method: "put",
+    parameters: ["photo"]
+}
+
+// 5: show User Profile
+{
+    link: "http://localhost:5000/api/users",
+    method: "get",
+    parameters: null
+}
+
+// ====================================
+// 📝 REQUESTS (6-13)
+// ====================================
+
+// 6: add request
+{
+    link: "http://localhost:5000/api/request",
+    method: "post",
+    parameters: ["age", "pain_severity", "pain_time", "tooth_location", "gender", "case_type", "is_pregnant(if gender=female)", "photo"]
+}
+
+// 7: accept request
+{
+    link: "http://localhost:5000/api/request/accept/:id/:overseer",
+    method: "post",
+    parameters: ["date", "hour", "location"]
+}
+
+// 8: update request
+{
+    link: "http://localhost:5000/api/request/:id",
+    method: "put",
+    parameters: null
+}
+
+// 9: delete request
+{
+    link: "http://localhost:5000/api/request/:id",
+    method: "delete",
+    parameters: null
+}
+
+// 10: show all requests (student / admin)
+{
+    link: "http://localhost:5000/api/request",
+    method: "get",
+    parameters: null
+}
+
+// 11: show my requests (patient)
+{
+    link: "http://localhost:5000/api/request/my",
+    method: "get",
+    parameters: null
+}
+
+// 12: show processing requests (student, patient, admin)
+{
+    link: "http://localhost:5000/api/request/myProcessing",
+    method: "get",
+    parameters: null
+}
+
+// 13: show any profile
+{
+    link: "http://localhost:5000/api/users/:id",
+    method: "get",
+    parameters: null
+}
+
+// ====================================
+// 👨‍💼 ADMIN MANAGEMENT (14-21)
+// ====================================
+
+// 14: update processing request (admin)
+{
+    link: "http://localhost:5000/api/admin/in_process/:id",
+    method: "put",
+    parameters: ["any field except patient, student, date_of_accepting"]
+}
+
+// 15: create overseer
+{
+    link: "http://localhost:5000/api/admin/overseer",
+    method: "post",
+    parameters: ["email", "password"]
+}
+
+// 16: account verification
+{
+    link: "http://localhost:5000/api/admin/verification/:id",
+    method: "put",
+    parameters: null
+}
+
+// 17: get all patients
+{
+    link: "http://localhost:5000/api/admin/patients",
+    method: "get",
+    parameters: null
+}
+
+// 18: get all overseers
+{
+    link: "http://localhost:5000/api/admin/overseers",
+    method: "get",
+    parameters: null
+}
+
+// 19: get all students
+{
+    link: "http://localhost:5000/api/admin/students",
+    method: "get",
+    parameters: null
+}
+
+// 20: accept account verification request
+{
+    link: "http://localhost:5000/api/admin/accept/reject/:id",
+    method: "post",
+    parameters: ["first_name", "last_name", "father_name", "university_number"]
+}
+
+// 21: reject account verification request
+{
+    link: "http://localhost:5000/api/admin/verification/reject/:id",
+    method: "post",
+    parameters: ["reject_reason"]
+}
+
+// ====================================
+// 📚 COURSES & TREATMENTS (22-30)
+// ====================================
+
+// 22: get all courses with overseers data
+{
+    link: "http://localhost:5000/api/courses",
+    method: "get",
+    parameters: null
+}
+
+// 23: add course
+{
+    link: "http://localhost:5000/api/courses",
+    method: "post",
+    parameters: ["course_name"]
+}
+
+// 24: add treatment
+{
+    link: "http://localhost:5000/api/admin/treatment",
+    method: "post",
+    parameters: ["case_type", "course"]
+}
+
+// 25: delete treatment
+{
+    link: "http://localhost:5000/api/admin/treatment/:id",
+    method: "delete",
+    parameters: null
+}
+
+// 26: get all treatments (patient and admin only)
+{
+    link: "http://localhost:5000/api/admin/treatment",
+    method: "get",
+    parameters: null
+}
+
+// 27: get course overseers (shows overseers for the student's request course)
+{
+    link: "http://localhost:5000/api/request/course-overseers/:id",
+    method: "get",
+    parameters: null
+}
+
+// 28: show treatments accepted by students and assigned to overseer
+{
+    link: "http://localhost:5000/api/overseer/treatment",
+    method: "get",
+    parameters: null
+}
+
+// 29: accept treatment with rating and feedback
+{
+    link: "http://localhost:5000/api/overseer/treatment/complete/:id",
+    method: "post",
+    parameters: ["rating: 1-5", "feedback"]
+}
+
+// 30: reject treatment with reason
+{
+    link: "http://localhost:5000/api/overseer/treatment/reject/:id",
+    method: "post",
+    parameters: ["note"]
+}
+
+// ====================================
+// 🎓 LESSONS & CATEGORIES (31-37)
+// ====================================
+
+// 31: add new practical lesson
+{
+    link: "http://localhost:5000/api/admin/practical-lessons",
+    method: "post",
+    parameters: null,
+    access: "private (Admin only)"
+}
+
+// 32: add category
+{
+    link: "http://localhost:5000/api/admin/category",
+    method: "post",
+    parameters: null,
+    access: "private (only admin)"
+}
+
+// 33: get all practical lessons
+{
+    link: "http://localhost:5000/api/admin/practical-lessons",
+    method: "get",
+    parameters: null,
+    access: "private (only admin)"
+}
+
+// 34: get categories
+{
+    link: "http://localhost:5000/api/admin/category",
+    method: "get",
+    parameters: null,
+    access: "private (only admin)"
+}
+
+// 35: assign overseer to lesson
+{
+    link: "http://localhost:5000/api/admin/overseer/assign",
+    method: "put",
+    parameters: ["lessonId", "overseerId"],
+    access: "private (only admin)",
+    example: {
+        "lessonId": "69e7d9c4b9426f163bbe1cd4",
+        "overseerId": "69b180f814b0ad386202e9dd"
+    }
+}
+
+// 36: add stage evaluation for request
+{
+    link: "http://localhost:5000/api/overseer/add-evaluation/:id",
+    method: "post",
+    parameters: null,
+    access: "private (Overseer only)"
+}
+
+// 37: reassign overseer for request after changing case type
+{
+    link: "http://localhost:5000/api/student/reassign-overseer/:id/overseer",
+    method: "put",
+    parameters: null,
+    access: "private (Student only)"
+}
+
+// ====================================
+// 💬 CONVERSATIONS & REQUEST STATUS (38-41)
+// ====================================
+
+// 38: open conversation
+{
+    link: "http://localhost:5000/api/conversations/:receiverId",
+    method: "post",
+    parameters: null
+}
+
+// 39: get user conversations
+{
+    link: "http://localhost:5000/api/conversations",
+    method: "get",
+    parameters: null
+}
+
+// 40: show finished requests
+{
+    link: "http://localhost:5000/api/request/finished",
+    method: "get",
+    parameters: null
+}
+
+// 41: show rejected requests
+{
+    link: "http://localhost:5000/api/request/rejected",
+    method: "get",
+    parameters: null
+}
+
+// ====================================
+// 🚨 REPORTS SYSTEM (42-46)
+// ====================================
+
+// 42: report a user (any authenticated user can report)
+{
+    link: "http://localhost:5000/api/reports",
+    method: "post",
+    parameters: ["reportedUserId", "reason", "type"],
+    access: "private (any authenticated user)",
+    types: ["spam", "harassment", "inappropriate_content", "fake_account", "other"]
+}
+
+// 43: get all reports (Admin only)
+{
+    link: "http://localhost:5000/api/reports",
+    method: "get",
+    parameters: ["status", "type", "page", "limit"],
+    access: "private (Admin only)"
+}
+
+
+
+// 45: update report status (Admin only)
+{
+    link: "http://localhost:5000/api/reports/:id/",
+    method: "put",
+    parameters: [note"],
+    access: "private (Admin only)",
+}
+
+ 46: add post 
+ {
+     link: "http://localhost:5000/api/posts",
+    method: "post",
+    parameters: [content images"],
+    access: "private ",
+ }
+
+ 47: get all posts 
+  {
+     link: "http://localhost:5000/api/posts",
+    method: "get",
+    access: "private ",
+ }
+ 48: get any post by id 
+ {
+     link: "http://localhost:5000/api/posts/:id",
+    method: "get",
+    access: "private ",
+ }
+ 49: add like
+ {
+     link: "http://localhost:5000/api/posts/:id/like",
+    method: "post",
+    access: "private ",
+ }
+ 50: add dislike
+ {
+     link: "http://localhost:5000/api/posts/:id/dislike",
+    method: "post",
+    access: "private ",
+ }
+ 51:
+ {
+     link: "http://localhost:5000/api/posts/:id",
+    method: "put",
+    access: "private ",
+ }
+ 52: delete post 
+  {
+     link: "http://localhost:5000/api/posts/:id",
+    method: "delete",
+    access: "private ",
+ }
+ 53:add comment
+ 
+ {
+     link: "http://localhost:5000/api/posts/cooments",
+    method: "post",
+    parameters: [content images"],
+    access: "private ",
+ }
+ 
+

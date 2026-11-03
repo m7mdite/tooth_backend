@@ -1,0 +1,81 @@
+const express = require('express');
+const path = require('path');
+const dotenv = require('dotenv');
+const http = require('http');
+const userRoutes = require('./routes/users');
+const socket = require('./socket/init');
+const { updateBaseUrlFromRequest } = require('./utils/updateEnv');
+
+dotenv.config();
+
+const app = express();
+const server = http.createServer(app);
+
+// لدعم JSON
+app.use(express.json());
+// في أعلى الملف مع باقي الاستيرادات
+
+
+let isBaseUrlSet = false;
+
+app.use((req, res, next) => {
+    if (!isBaseUrlSet) {
+        const baseUrl = updateBaseUrlFromRequest(req);
+        console.log(`✅ BASE_URL updated to: ${baseUrl}`);
+        isBaseUrlSet = true;
+    }
+    next();
+});
+
+app.use('/images', express.static(path.join(__dirname, 'images')));
+// راوتر المستخدمين
+app.use('/api/users', userRoutes);
+app.use('/api/auth/', require('./routes/auth'));
+app.use('/api/profile', require('./routes/users'));
+app.use('/api/request', require('./routes/requestions'));
+app.use('/api/admin',require('./routes/admin'));
+app.use('/api/overseer',require('./routes/overseer'))
+app.use('/api/conversations',require('./routes/conversations'))
+app.use('/api/reports',require('./routes/reports'));
+app.use('/api/posts',require('./routes/posts'))
+app.use('/api/posts/comments',require('./routes/comments'))
+app.use('/api/dashboard',require('./routes/dashbord'))
+app.use('/api/advertisements',require('./routes/advertisements'))
+
+// روت تدريب اول مودلليتنبأ بامكانية معالجة الحالة 
+app.use('/api/ml', require('./ml/routes/mlRoutes'));
+
+// تدريب مودل على توقع نوع الحالة 
+app.use('/api/treatment-ml', require('./ml-treatment/routes/treatmentRoutes'));
+
+
+
+// خطأ 404 لأي راوتر آخر
+app.use((req, res) => {
+  res.status(404).json({ message: 'Route not found' });
+});
+
+// اتصال قاعدة البيانات
+require('./config/db')();
+
+// تهيئة socket.io
+const io = socket.init(server);
+
+// استماع على الاتصالات
+io.on('connection', (socket) => {
+  console.log('User connected:', socket.id);
+
+  socket.on('registerPatient', (patientId) => {
+    socket.join(patientId.toString()); // يدخل غرفة باسم patientId
+    console.log(`Patient ${patientId} joined room`);
+  });
+
+  socket.on('disconnect', () => {
+    console.log('User disconnected:', socket.id);
+  });
+});
+module.exports=io
+
+
+const PORT = process.env.PORT ;
+server.listen(PORT,'0.0.0.0', () => console.log(`Server running on port ${PORT}`));

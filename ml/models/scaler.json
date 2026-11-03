@@ -1,0 +1,41 @@
+{
+  "means": {
+    "age": 37.416666666666664,
+    "gender": 0.3888888888888889,
+    "pain_severity": 6.111111111111111,
+    "pain_time": 1.6666666666666667,
+    "tooth_location": 20.61111111111111,
+    "is_pregnant": 0.2777777777777778,
+    "previous_treatment": 0,
+    "medicines": 0,
+    "chronic_diseases": 0,
+    "notes": 0,
+    "case_type": 1723
+  },
+  "stds": {
+    "age": 13.275656501866699,
+    "gender": 0.4874980215217844,
+    "pain_severity": 2.3425742935897795,
+    "pain_time": 1.2247448713915892,
+    "tooth_location": 3.5140810224152155,
+    "is_pregnant": 0.4479032082388084,
+    "previous_treatment": 1,
+    "medicines": 1,
+    "chronic_diseases": 1,
+    "notes": 1,
+    "case_type": 1
+  },
+  "features": [
+    "age",
+    "gender",
+    "pain_severity",
+    "pain_time",
+    "tooth_location",
+    "is_pregnant",
+    "previous_treatment",
+    "medicines",
+    "chronic_diseases",
+    "notes",
+    "case_type"
+  ]
+}

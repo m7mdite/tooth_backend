@@ -1,0 +1,26 @@
+const express = require('express');
+const router = express.Router();
+const {uploadProfilePhoto}=require('../Middlewares/upload')
+const verifyToken = require('../Middlewares/verifyToken');
+const { updateProfilePhoto, updateUserProfile, showUserProfile, getProfile } = require('../controllers/usercontroller');
+router.use((req, res, next) => {
+    console.log('📡 User Route:', req.method, req.originalUrl);
+    console.log('📝 Params:', req.params);
+    next();
+});
+// update profile photo
+router.put('/photo', verifyToken,uploadProfilePhoto.single('profile_photo'),updateProfilePhoto);
+
+// update user profile
+router.put('/', verifyToken,updateUserProfile);
+
+//show User Profile
+router.get('/',verifyToken,showUserProfile)
+
+// get profile
+router.get('/:id',verifyToken,getProfile)
+
+
+ 
+
+module.exports = router;
