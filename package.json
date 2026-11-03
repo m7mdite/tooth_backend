@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js",
-    "ml-export": "node ml/scripts/exportData.js",
-    "ml-preprocess": "node ml/scripts/preprocessData.js",
-    "ml-train": "node ml/scripts/trainModel.js",
-    "ml-full": "node ml/scripts/fullTrain.js"
-  },
+  "start": "node app.js",
+  "dev": "nodemon app.js",
+  "ml-export": "node ml/scripts/exportData.js",
+  "ml-preprocess": "node ml/scripts/preprocessData.js",
+  "ml-train": "node ml/scripts/trainModel.js",
+  "ml-full": "node ml/scripts/fullTrain.js"
+},
   "author": "mahmoud asslan",
   "license": "ISC",
   "dependencies": {
